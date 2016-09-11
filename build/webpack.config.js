@@ -47,9 +47,9 @@ webpackConfig.output = {
 webpackConfig.plugins = [
   new webpack.DefinePlugin(config.globals),
   new HtmlWebpackPlugin({
+    title: 'Redux, React Basic Structure',
     template: paths.client('index.html'),
     hash: false,
-    filename: 'index.html',
     inject: 'body',
     minify: {
       collapseWhitespace: true

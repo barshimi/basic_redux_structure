@@ -7,12 +7,10 @@ import webpack from 'webpack'
 import webpackConfig from '../build/webpack.config'
 import historyApiFallback from 'koa-connect-history-api-fallback'
 import serve from 'koa-static'
-import _debug from 'debug'
 import config from '../config'
 import webpackDevMiddleware from './middleware/webpack-dev'
 import webpackHMRMiddleware from './middleware/webpack-hmr'
 
-const debug = _debug('app:server')
 const paths = config.utils_paths
 const app = new Koa()
 
@@ -38,5 +36,3 @@ if (config.env === 'development') {
 }
 
 export default app
-
-

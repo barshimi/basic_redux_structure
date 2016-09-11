@@ -1,7 +1,7 @@
 /**
  *  fetch api calls
  */
-import 'whatwg-fetch';
+import {Request} from 'whatwg-fetch'
 
 /**
  * fetch API GET method
@@ -17,7 +17,7 @@ export function APIgetCall (URL) {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     }
-  });
+  })
 }
 
 /**
@@ -35,5 +35,5 @@ export function APIpostCall (URL, PARAMS) {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(PARAMS)
-  });
+  })
 }

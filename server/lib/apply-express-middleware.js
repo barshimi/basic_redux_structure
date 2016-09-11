@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 export default function applyExpressMiddleware (fn, req, res) {
   const originalEnd = res.end
@@ -13,4 +13,3 @@ export default function applyExpressMiddleware (fn, req, res) {
     })
   })
 }
-

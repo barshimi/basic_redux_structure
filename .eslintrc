@@ -5,6 +5,7 @@
     "standard-react"
   ],
   "plugins" : [
+    "babel",
     "flow-vars",
      "react"
   ],
@@ -15,16 +16,16 @@
     "Action"       : false,
     "__DEV__"      : false,
     "__PROD__"     : false,
-    "__DEBUG__"    : false,
-    "__DEBUG_NEW_WINDOW__" : false,
-    "__BASENAME__" : false
+    "__DEBUG__"    : false
   },
   "rules": {
-    "semi" : [2, "always"],
+    "semi" : [2, "never"],
+    "skipBlankLines": 0,
     "max-len": [2, 2000, 2],
     "flow-vars/define-flow-type": 1,
     "flow-vars/use-flow-type": 1,
     "react/jsx-no-bind": [2, { "allowBind": true, "allowArrowFunctions": true }],
-    "react/jsx-boolean-value": [2, "always"]
+    "react/jsx-boolean-value": [2, "always"],
+    "babel/generator-star-spacing": 1,
   }
 }

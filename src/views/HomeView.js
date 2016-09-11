@@ -1,24 +1,24 @@
-'use strict';
+'use strict'
 
-import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import {homeActionCreators} from 'actions/home_action';
-import DuckImage from 'static/Duck.jpg';
-import classes from 'styles/homeView.scss';
+import React, { PropTypes } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import {homeActionCreators} from 'actions/home_action'
+import DuckImage from 'static/Logo-Big.png'
+import classes from 'styles/homeView.scss'
 
-export class HomeView extends React.Component<void, Props, void> {
+export class HomeView extends React.Component {
   static propTypes = {
     actions: PropTypes.object,
     counter: PropTypes.number.isRequired
-  };
+  }
 
   AddCounter = () => {
-    this.props.actions.incrementCounter(this.props.counter);
+    this.props.actions.incrementCounter(this.props.counter)
   }
 
   AddDouble = () => {
-    this.props.actions.doubleIncrement(this.props.counter);
+    this.props.actions.doubleIncrement(this.props.counter)
   }
 
   render () {
@@ -26,13 +26,13 @@ export class HomeView extends React.Component<void, Props, void> {
       <div className='container text-center'>
         <div className='row'>
           <div className='col-xs-2 col-xs-offset-5'>
-            <img className={classes.duck}
+            <img className={classes.full_logo}
               src={DuckImage}
-              alt='This is a duck, because Redux.' />
+              alt='Tikal Full Stack developers' />
           </div>
         </div>
-        <h1>Welcome you to the React Redux Starter Kit</h1>
-        <h2>
+        <h1 className={classes.welcome}>Welcome you to the React Redux Basic Structure</h1>
+        <h2 className={classes.counter_title}>
           Sample Counter:
           {' '}
           <span className={classes['counter--green']}>{this.props.counter}</span>
@@ -45,23 +45,15 @@ export class HomeView extends React.Component<void, Props, void> {
           Double
         </button>
       </div>
-    );
-  };
+    )
+  }
 }
 const mapStateToProps = (state) => ({
   counter: state.counter
-});
+})
 
 const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators(Object.assign({}, homeActionCreators), dispatch)
-});
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeView);
-
-// const mapStateToProps = (state) => ({
-//   counter: state.counter
-// });
-// export default connect((mapStateToProps), {
-//   increment: () => increment(1),
-//   doubleAsync
-// })(HomeView);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeView)

@@ -55,7 +55,6 @@ const config = {
   ]
 }
 
-
 // ------------------------------------
 // Environment
 // ------------------------------------
@@ -64,13 +63,11 @@ config.globals = {
   'process.env'  : {
     'NODE_ENV' : JSON.stringify(config.env)
   },
-  'NODE_ENV'     : config.env,
-  '__DEV__'      : config.env === 'development',
-  '__PROD__'     : config.env === 'production',
-  '__TEST__'     : config.env === 'test',
-  '__DEBUG__'    : config.env === 'development' && !argv.no_debug,
-  '__DEBUG_NEW_WINDOW__' : !!argv.nw,
-  '__BASENAME__' : JSON.stringify(process.env.BASENAME || '')
+  'NODE_ENV': config.env,
+  '__DEV__': config.env === 'development',
+  '__PROD__': config.env === 'production',
+  '__TEST__': config.env === 'test',
+  '__DEBUG__': config.env === 'development' && !argv.no_debug
 }
 
 // ------------------------------------
@@ -98,7 +95,6 @@ config.utils_paths = (() => {
   const base = (...args) => {
     return resolve.apply(resolve, [config.path_base, ...args])
   }
-
 
   return {
     base   : base,
